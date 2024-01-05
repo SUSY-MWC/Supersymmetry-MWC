@@ -1,1 +1,1 @@
-
+import static globals.Globals.*
