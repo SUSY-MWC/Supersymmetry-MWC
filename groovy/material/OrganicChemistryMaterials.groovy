@@ -273,11 +273,7 @@ public class OrganicChemistryMaterials {
                 .colorAverage()
                 .build();
 
-        TwoTwoDichlorohydrazobenzeneSolution = new Material.Builder(15044, SuSyUtility.susyId('two_two_dichlorohydrazobenzene_solution'))
-                .fluid()
-                .components(Toluene, 1, TwoTwoDichlorohydrazobenzene, 1)
-                .colorAverage()
-                .build();
+        //FREE ID: 15044
 
         DichlorobenzidineSolution = new Material.Builder(15045, SuSyUtility.susyId('dichlorobenzidine_solution'))
                 .fluid()
@@ -317,30 +313,26 @@ public class OrganicChemistryMaterials {
 
         DiphenylIsophthalateSolution = new Material.Builder(15051, SuSyUtility.susyId('diphenyl_isophthalate_solution'))
                 .fluid()
-                .components(Dichloroethane, 1, DiphenylIsophtalate, 1, Water, 2)
+                .components(DiphenylIsophtalate, 1, Dichloroethane, 1)
                 .colorAverage()
                 .build();
 
         DiaminobenzidineSolution = new Material.Builder(15052, SuSyUtility.susyId('diaminobenzidine_solution'))
                 .fluid()
-                .components(Toluene, 1, Diaminobenzidine, 1, Water, 1)
+                .components(Diaminobenzidine, 1, Toluene, 1)
                 .colorAverage()
                 .build();
 
-        PBIPolymerizationMix = new Material.Builder(15053, SuSyUtility.susyId('pbi_polymerization_mix'))
-                .fluid()
-                .color(0x40342b)
-                .fluidTemp(450)
-                .build();
+        //FREE ID: 15053
 
-        PBIPrePolymerFoam = new Material.Builder(15054, SuSyUtility.susyId('pbi_pre_polymer_foam'))
-                .fluid()
+        PBIFoam = new Material.Builder(15054, SuSyUtility.susyId('pbi_foam'))
+                .dust()
                 .color(0x332d28)
                 .fluidTemp(450)
                 .build();
 
-        ImpurePBISolution = new Material.Builder(15055, SuSyUtility.susyId('impure_pbi_solution'))
-                .fluid()
+        PBIPrepolymer = new Material.Builder(15055, SuSyUtility.susyId('pbi_prepolymer'))
+                .dust()
                 .color(0x292623)
                 .fluidTemp(450)
                 .build();
@@ -353,7 +345,7 @@ public class OrganicChemistryMaterials {
 
         PBISolution = new Material.Builder(15057, SuSyUtility.susyId('pbi_solution'))
                 .fluid()
-                .components(Dimethylacetamide, 1, Polybenzimidazole, 7)
+                .components(Dimethylacetamide, 1, Polybenzimidazole, 1)
                 .color(0x171410)
                 .build();
 
@@ -2438,5 +2430,31 @@ public class OrganicChemistryMaterials {
                 .build();
 
         CalciumAcetate.setFormula("Ca(CH3CO2)2", true)
+
+        GaseousMethacroleinMixture = new Material.Builder(15388, SuSyUtility.susyId('gaseous_methacrolein_mixture'))
+                .fluid(FluidTypes.GAS)
+                .fluidTemp(434)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 1, Steam, 1)
+                .colorAverage()
+                .build();
+
+        GaseousMethacroleinMixture.setFormula("(C4H6O)(H2O)", true)
+
+        GaseousMethacroleinResidue = new Material.Builder(15389, SuSyUtility.susyId('gaseous_methacrolein_residue'))
+                .fluid(FluidTypes.GAS)
+                .fluidTemp(434)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 1, Steam, 4)
+                .colorAverage()
+                .build();
+
+        GaseousMethacroleinResidue.setFormula("(C4H6O)(H2O)4", true)
+
+        AbsorbedMethacrolein = new Material.Builder(15390, SuSyUtility.susyId('absorbed_methacrolein'))
+                .fluid(FluidTypes.ACID)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 1, AceticAcid, 4, Water, 5)
+                .colorAverage()
+                .build();
+
+        AbsorbedMethacrolein.setFormula("(C4H6O)(CH3COOH)4(H2O)5", true)
     }
 }
